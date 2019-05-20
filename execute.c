@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-/*
- * Funzione di esecuzione del codice macchina
- */
+
+int execute (FILE *fp, VM mem){
+    
+}
 
