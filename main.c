@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "print.c"
+#include "VM.h"
+
 /*#include "execute.c"*/
 
 int main() {
