@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "print.c"
-/*#include "execute.c"/*
+/*#include "execute.c"*/
 
 int main() {
 
@@ -10,7 +10,7 @@ int main() {
      * execute : Esegue i comandi riportarti all'interno del file input
      */
     FILE *fp;
-    while (!(fp = fopen ("Fattoriale_prova.txt","r")){
+    if (!(fp = fopen ("Fattoriale_prova.txt","r"))){
         printf  ("FILE NOT FOUND\n");
         return 0;
     }
