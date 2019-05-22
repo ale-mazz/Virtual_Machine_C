@@ -3,6 +3,6 @@
 #include "VM.h"
 
 int execute (FILE *fp, VM mem){
-    
+
 }
 
