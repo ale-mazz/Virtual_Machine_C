@@ -36,7 +36,6 @@ int input_to_array(char *input_name, int *input_array) {
         }
     }
 
-
     free(line);
     return array_size;
 }
