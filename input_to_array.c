@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int input_to_array(char *input_name, int *input_array) {
+int input_to_array(char *input_name, int **input_array) {
     FILE *fp;
     char *line;
     int first = 0;
@@ -26,12 +26,12 @@ int input_to_array(char *input_name, int *input_array) {
             first = 1;
         }
     }
-    input_array = malloc(sizeof(int *) * array_size);
+    *input_array = realloc(*input_array, array_size * sizeof(int));
     while ((getline(&line, &linesize, fp)) != -1) {
         char *p = strtok(line, " ;");
 
         if (p[0] >= '0' && p[0] <= '9') {
-            input_array[i] = atoi(p);
+            (*input_array)[i] = atoi(p);
             i++;
         }
     }
