@@ -11,6 +11,7 @@ int input_to_array(char *input_name, int *input_array) {
     int i = 0;
     size_t linesize = 1;
 
+
     line = (char *) malloc(sizeof(char) * linesize);
 
     if (!(fp = fopen(input_name, "r"))) {
@@ -35,9 +36,7 @@ int input_to_array(char *input_name, int *input_array) {
         }
     }
 
-    for (int i = 0; i < array_size; i++) {
-        printf("%d\n", input_array[i]);
-    }
+
     free(line);
     return array_size;
 }

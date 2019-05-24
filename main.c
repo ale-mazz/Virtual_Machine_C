@@ -19,7 +19,12 @@ int main(int argc, char *argv[]) {
     }
 
     printf("Dimensione array = %d\n", input_array_size);
-    printf("%d", input_array[1]);
-
+    for (int i = 0; i < input_array_size; i++) {
+        printf("%d", input_array);
+    }
+    for (int i = 0; i < input_array_size; i++) {
+        printf("%d\n", input_array[i]);
+    }
+    free(input_array);
     return 0;
 }
