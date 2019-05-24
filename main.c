@@ -1,21 +1,25 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "VM.h"
 
 /*#include "execute.c"*/
-int main() {
+int main(int argc, char *argv[]) {
 
-    /*
-     * In questo main dobbiamo poter eseguire due operazioni:
-     * print : Stampa il file di input come una serie di comandi
-     * execute : Esegue i comandi riportarti all'interno del file input
-     */
+    int *input_array = 0;
+    char *input_name = NULL;
+    char *instruction_name = NULL;
+    int input_array_size = 0;
 
-    FILE *fp;
-    if (!(fp = fopen ("Fattoriale_prova.txt","r"))){
-        printf  ("FILE NOT FOUND\n");
-        return 0;
+    instruction_name = argv[1];
+    input_name = argv[2];
+
+    if (strcmp(instruction_name, "print") == 0) {
+        input_array_size = input_to_array(input_name, input_array);
     }
-    print_input(fp);
-    fclose (fp);
+
+    printf("Dimensione array = %d\n", input_array_size);
+    printf("%d", input_array[1]);
+
     return 0;
 }

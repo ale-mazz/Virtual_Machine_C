@@ -7,8 +7,8 @@
  * Funzione di stampa del file input come riportato da specifiche di progetto
 */
 
-void print_input(FILE *fp) {
-
+void print_input(int *input_array) {
+    /*
     int count_reg = 0;
     char *line;
     int count_line = -1;
@@ -220,4 +220,5 @@ void print_input(FILE *fp) {
             count_line++;
     }
     free(line);
+     */
 }

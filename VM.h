@@ -10,5 +10,7 @@ struct virtual_machine {
 };
 typedef struct virtual_machine VM;
 
-void print_input (FILE *fp);
-int execute (FILE *fp, VM mem);
+void print_input(int *input_array);
+
+//int execute (FILE *fp, VM mem);
+int input_to_array(char *input_name, int *input_array);
