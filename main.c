@@ -15,14 +15,15 @@ int main(int argc, char *argv[]) {
     input_name = argv[2];
 
     if (strcmp(instruction_name, "print") == 0) {
+        printf("Stampa\n");
         input_array_size = input_to_array(input_name, &input_array);
+        print_assembly(input_array, input_array_size);
+    } else if (strcmp(instruction_name, "execute") == 0) {
+        printf("Esegui\n");
+    } else {
+        printf("Istruzione scorretta.\n");
     }
 
-    printf("Dimensione array = %d\n", input_array_size);
-
-    for (int i = 0; i < input_array_size; i++) {
-        printf("%d\n", input_array[i]);
-    }
 
     free(input_array);
     return 0;
