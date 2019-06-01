@@ -9,7 +9,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
         switch (input_array[i]) {
             case 1:/*DISPLAY*/
                 printf("%3d", mem->reg[input_array[mem->ip+1]]);
-                mem->ip += 1;
+                mem->ip += 2;
                 break;
 
             case 2:/*non capisco cosa debba fare print_stack,*/
@@ -21,7 +21,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
                 if (mem->sp<MEMSIZE){
                     mem->stack[mem->sp]=input_array[mem->ip+1];
                     mem->sp+=1;
-                    mem->ip += 1;
+                    mem->ip += 2;
                 }
                 else{
                     printf("ERRORE PUSH:OVERFLOW CAUSA STACK PIENO");
@@ -33,7 +33,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
                 if (mem->sp>0){
                     mem->sp-=1;
                     mem->reg[sp]=input_array[mem->ip+1];
-                    mem->ip += 1;
+                    mem->ip += 2;
                 }
                 else{
                     printf ("ERRORE POP: UNDERFLOW CAUSA STACK VUOTO");
@@ -43,7 +43,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
 
             case 12:/*MOV*/
                 mem->reg[mem->ip+1]=input_array[mem->ip+2];
-                mem->ip += 2;
+                mem->ip += 3;
                 break;
 
             case 20:/*CALL*/
@@ -59,8 +59,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
                 break;
 
             case 22:/*JMP*/
-                mem->ip=input_array[mem->ip+1];
-                mem->ip += 1;  
+                mem->ip=input_array[mem->ip+1];  
                 break;
 
             case 23:/*JZ*/
@@ -94,7 +93,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
                 if (mem->sp<MEMSIZE){
                     mem->stack[sp]=mem->reg[mem->ip+1]+mem->reg[mem->ip+2];
                     mem->sp+=1;
-                    mem->ip += 2;
+                    mem->ip += 3;
                 }
                 else{
                     printf ("ERRORE ADD OVERFLOW");
@@ -106,7 +105,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
                 if (mem->sp<MEMSIZE){
                     mem->stack[sp]=mem->reg[mem->ip+1]-mem->reg[mem->ip+2];
                     mem->sp+=1;
-                    mem->ip += 2;
+                    mem->ip += 3;
                 }
                 else {
                     printf ("ERRORE SUB OVERFLOW");
@@ -118,7 +117,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
                 if (mem->sp<MEMSIZE){
                     mem->stack[sp]=mem->reg[mem->ip+1]*mem->reg[mem->ip+2];
                     mem->sp+=1;
-                    mem->ip += 2;
+                    mem->ip += 3;
                 }
                 else{
                     printf ("ERRORE MUL OVERFLOW");
@@ -130,7 +129,7 @@ int execute (int *input_array, int input_array_size, VM *mem){
                 if (mem->sp<MEMSIZE){
                     mem->stack[sp]=mem->reg[mem->ip+1]/mem->reg[mem->ip+2];
                     mem->sp+=1;
-                    mem->ip += 2;
+                    mem->ip += 3;
                 }
                 else {
                     printf("ERRORE DIV OVERFLOW");
