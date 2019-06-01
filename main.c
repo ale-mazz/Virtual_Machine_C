@@ -18,11 +18,11 @@ int main(int argc, char *argv[]) {
 
     if (strcmp(instruction_name, "print") == 0) {
         printf("Stampa\n");
-        input_array_size = input_to_array(input_name, input_array);
+        input_array_size = input_to_array(input_name, &input_array);
         print_assembly(input_array, input_array_size);
     } else if (strcmp(instruction_name, "execute") == 0) {
         printf("Esegui\n");
-        input_array_size=input_to_array(input_name, input_array);
+        input_array_size = input_to_array(input_name, &input_array);
         execute (input_array, input_array_size, virtual_stack);
     } else {
         printf("Istruzione scorretta.\n");
@@ -30,6 +30,6 @@ int main(int argc, char *argv[]) {
 
     free (virtual_stack);
     free(input_array);
-    void (argc);
+    (void) argc;
     return 0;
 }
