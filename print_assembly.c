@@ -3,8 +3,8 @@
 #include <string.h>
 #include "VM.h"
 
-void print_assembly(int *input_array, int input_array_size) {
-    int i = 0;
+void print_assembly(int *input_array, unsigned int input_array_size) {
+    unsigned int i = 0;
 
     for (i = 0; i < input_array_size; i++) {
         switch (input_array[i]) {
