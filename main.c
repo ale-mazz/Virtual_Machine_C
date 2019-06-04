@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     int *input_array = 0;
     char *input_name = NULL;
     char *instruction_name = NULL;
-    int input_array_size = 0;
+    unsigned int input_array_size = 0;
     VM *virtual_stack;
     virtual_stack=(VM*)malloc (sizeof (struct virtual_machine));
     virtual_stack->sp=0;
