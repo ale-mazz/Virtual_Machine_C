@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-int input_to_array(char *input_name, int **input_array) {
+unsigned int input_to_array(char *input_name, int **input_array) {
     FILE *fp;
     char *line;
     int first = 0;
-    int array_size = 0;
+    unsigned int array_size = 0;
     int i = 0;
     size_t linesize = 1;
 
@@ -30,7 +30,7 @@ int input_to_array(char *input_name, int **input_array) {
     while ((getline(&line, &linesize, fp)) != -1) {
         char *p = strtok(line, " ;");
 
-        if (p[0] >= '0' && p[0] <= '9') {
+        if ((p[0] >= '0' && p[0] <= '9') || p[0]=='-') {
             (*input_array)[i] = atoi(p);
             i++;
         }
