@@ -1,7 +1,7 @@
 35
 12  ;[ 0]    MOV R0 3
 0   ;[ 1]
-3   ;[ 2]    inserisci i primi n interi di cui vuoi fare la somma
+10000100 ;[ 2]    inserisci i primi n interi di cui vuoi fare la somma
 20  ;[ 3]    CALL 8
 8   ;[ 4]
 1   ;[ 5]    DISPLAY R1

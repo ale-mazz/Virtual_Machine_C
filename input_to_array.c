@@ -30,7 +30,7 @@ unsigned int input_to_array(char *input_name, int **input_array) {
     while ((getline(&line, &linesize, fp)) != -1) {
         char *p = strtok(line, " ;");
 
-        if ((p[0] >= '0' && p[0] <= '9') || p[0]=='-') {
+        if ((p[0] >= '0' && p[0] <= '9') || p[0] == '-') {
             (*input_array)[i] = atoi(p);
             i++;
         }
