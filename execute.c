@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include "VM.h"
 /*Il programma fattoriale funziona fino a n=12, poichè l' int non è abbastanza*/
-int execute (unsigned int *input_array, unsigned int input_array_size, VM *mem){
+int execute(int const *input_array, unsigned int input_array_size, VM *mem) {
     unsigned int i=0;
     while (mem->ip<input_array_size && input_array[mem->ip]!=0){
         switch (input_array[mem->ip]) {
