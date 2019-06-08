@@ -15,10 +15,6 @@ int main(int argc, char *argv[]) {
     char *input_name = NULL;
     char *instruction_name = NULL;
     unsigned int input_array_size = 0;
-    VM *virtual_stack;
-    virtual_stack=(VM*)malloc (sizeof (struct virtual_machine));
-    virtual_stack->sp=0;
-    virtual_stack->ip=0;
     instruction_name = argv[1];
     input_name = argv[2];
 
@@ -28,7 +24,6 @@ int main(int argc, char *argv[]) {
 
     if (!(fp = fopen(input_name, "r"))) {
         printf("File non trovato.\n");
-        free(virtual_stack);
         return 0;
     }
 
@@ -38,14 +33,19 @@ int main(int argc, char *argv[]) {
      * fosse "stampa"
      *
      * Passo invece alla funzione di esecuzione l'array contenente le istruzioni macchina in caso la funzione richiesta fosse "esegui"
+     * Se la richiesta fosse esegui, viene calcolata la dimensione dell'array che contiene le istruzioni e inizializzo lo stack e i registri
+     * e pongo a zero gli indici ip e sp.
      */
     if (strcmp(instruction_name, "stampa") == 0) {
 
         input_array_size = input_to_array(fp, &input_array);
         print_assembly(input_array, input_array_size);
     } else if (strcmp(instruction_name, "esegui") == 0) {
-
+        VM *virtual_stack;
         input_array_size = input_to_array(fp, &input_array);
+        virtual_stack=(VM*)malloc (sizeof (struct virtual_machine));
+        virtual_stack->sp=0;
+        virtual_stack->ip=0; 
         execute (input_array, input_array_size, virtual_stack);
     } else {
 
