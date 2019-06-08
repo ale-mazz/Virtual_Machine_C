@@ -1,10 +1,10 @@
-#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "VM.h"
 
 int main(int argc, char *argv[]) {
 
+    FILE *fp;
     int *input_array = 0;
     char *input_name = NULL;
     char *instruction_name = NULL;
@@ -16,15 +16,22 @@ int main(int argc, char *argv[]) {
     instruction_name = argv[1];
     input_name = argv[2];
 
-    if (strcmp(instruction_name, "print") == 0) {
-        printf("Stampa\n");
-        input_array_size = input_to_array(input_name, &input_array);
+
+    if (!(fp = fopen(input_name, "r"))) {
+        printf("File non trovato.\n");
+        return 0;
+    }
+
+    if (strcmp(instruction_name, "stampa") == 0) {
+
+        input_array_size = input_to_array(fp, &input_array);
         print_assembly(input_array, input_array_size);
-    } else if (strcmp(instruction_name, "execute") == 0) {
-        printf("Esegui\n");
-        input_array_size = input_to_array(input_name, &input_array);
+    } else if (strcmp(instruction_name, "esegui") == 0) {
+
+        input_array_size = input_to_array(fp, &input_array);
         execute (input_array, input_array_size, virtual_stack);
     } else {
+
         printf("Istruzione scorretta.\n");
     }
 

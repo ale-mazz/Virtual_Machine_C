@@ -1,8 +1,8 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include "VM.h"
+
 /*Il programma fattoriale funziona fino a n=12, poichè l' int non è abbastanza*/
 int execute(int const *input_array, unsigned int input_array_size, VM *mem) {
     unsigned int i=0;

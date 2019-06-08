@@ -1,10 +1,9 @@
 #include "VM.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-unsigned int input_to_array(char *input_name, int **input_array) {
-    FILE *fp;
+int input_to_array(FILE *fp, int **input_array) {
+
     char *line;
     int first = 0;
     unsigned int array_size = 0;
@@ -13,11 +12,6 @@ unsigned int input_to_array(char *input_name, int **input_array) {
 
 
     line = (char *) malloc(sizeof(char) * linesize);
-
-    if (!(fp = fopen(input_name, "r"))) {
-        printf("FILE NOT FOUND\n");
-        return 0;
-    }
 
     while ((first == 0 && getline(&line, &linesize, fp)) > 0) {
         char *p = strtok(line, " ;");
