@@ -1,6 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+/*
+ * File prodotto da Alessandro Mazzon
+ *
+ * In questo file è stata creata una funzione molto semplice che prende in input l'array contenente gli interi da stampare e la sua dimensione.
+ * Viene dichiarato ed inizializzato un intero e viene eseguito uno switch all'interno di un ciclo for (per ogni valore dell'array) e viene
+ * stampato a schermo il codice macchina come da specifiche.
+ *
+ */
+
 #include "VM.h"
 
 void print_assembly(int *input_array, unsigned int input_array_size) {

@@ -1,4 +1,12 @@
+/*
+ * File prodotto da Davide Vio
+ */
+
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 #define MEMSIZE (1024*64)
 
 struct virtual_machine {

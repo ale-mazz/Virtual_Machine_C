@@ -1,6 +1,6 @@
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+/*
+ * File prodotto da Davide Vio
+ */
 #include "VM.h"
 
 /*Il programma fattoriale funziona fino a n=12, poichè l' int non è abbastanza*/
