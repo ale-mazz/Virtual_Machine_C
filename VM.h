@@ -1,7 +1,12 @@
 /*
  * File prodotto da Davide Vio
- VM.h contiene tutte le librerie utilizzate nei vari programmi atti a far funzionare la "virtual machine".
- MEMSIZE è settato a 64kb di int. Ho utilizzato una struct per non dover passare 6 parametri alla funzione execute.
+ *
+ * P1G95
+ * Alessandro Mazzon - 877443
+ * Davide Vio - 858687
+ *
+ * VM.h contiene tutte le librerie utilizzate nei vari programmi atti a far funzionare la "virtual machine".
+ * MEMSIZE è settato a 64kb di int. Ho utilizzato una struct per non dover passare 6 parametri alla funzione execute.
  */
 
 #include <stdio.h>

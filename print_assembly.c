@@ -1,6 +1,10 @@
 /*
  * File prodotto da Alessandro Mazzon
  *
+ * P1G95
+ * Alessandro Mazzon - 877443
+ * Davide Vio - 858687
+ *
  * In questo file è stata creata una funzione molto semplice che prende in input l'array contenente gli interi da stampare e la sua dimensione.
  * Viene dichiarato ed inizializzato un intero e viene eseguito uno switch all'interno di un ciclo for (per ogni valore dell'array) e viene
  * stampato a schermo il codice macchina come da specifiche.

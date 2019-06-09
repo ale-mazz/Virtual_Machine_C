@@ -1,17 +1,22 @@
 /*
-* File prodotto da Davide Vio
-* La funzione execute permette di eseguire il file *.cvm e di restiture il risultato.
-* L'array dato in input contiene le informazioni necessarie per eseguire il programma, ossia il numero dell' istruzione e nella maggior parte dei casi pure i registri
-* o i numeri da inserire nella struct virtual machine (stack o registri).
-* Lo stack, i registri e gli indici sp e ip vengono inizializzati nel main prima della chiamata a funzione execute.
-* Grazie ad un ciclo while e all'utilizzo dello switch sui valori dell' array in input, vengono eseguite le varie istruzioni.
-* Il programma segnale errori in casi di stack overflow sulla PUSH, ADD, SUB, MUL e DIV e di stack underflow nel caso della POP, RET, JZ, JPOS e JNEG.
-* Segnala inoltre gli errori in caso di overflow e underflow dei risultati delle quattro operazioni scritte sopra.
+ * File prodotto da Davide Vio
+ *
+ * P1G95
+ * Alessandro Mazzon - 877443
+ * Davide Vio - 858687
+ *
+ * La funzione execute permette di eseguire il file *.cvm e di restiture il risultato.
+ * L'array dato in input contiene le informazioni necessarie per eseguire il programma, ossia il numero dell' istruzione e nella maggior parte dei casi pure i registri
+ * o i numeri da inserire nella struct virtual machine (stack o registri).
+ * Lo stack, i registri e gli indici sp e ip vengono inizializzati nel main prima della chiamata a funzione execute.
+ * Grazie ad un ciclo while e all'utilizzo dello switch sui valori dell' array in input, vengono eseguite le varie istruzioni.
+ * Il programma segnale errori in casi di stack overflow sulla PUSH, ADD, SUB, MUL e DIV e di stack underflow nel caso della POP, RET, JZ, JPOS e JNEG.
+ * Segnala inoltre gli errori in caso di overflow e underflow dei risultati delle quattro operazioni scritte sopra.
  */
 
 #include "VM.h"
 
-int execute (int *input_array, unsigned int input_array_size, VM *mem){
+int execute(int const *input_array, unsigned int input_array_size, VM *mem) {
     unsigned int i=0;
     int a,b;
     while (mem->ip<input_array_size && input_array[mem->ip]!=0){

@@ -1,6 +1,10 @@
 /*
  * File prodotto da Alessandro Mazzon
  *
+ * P1G95
+ * Alessandro Mazzon - 877443
+ * Davide Vio - 858687
+ *
  * In questo file è stata creata una funzione che, partendo dal file fp crea un array "input_array" allocato dinamicamente contenente
  * tutti numeri interi che corrispondono alle istruzioni e ai registri/numeri contenuti nel file macchina,
  * il tipo di ritorno della funzione è int poichè ritornerà la dimensione dell'array appena creato.
